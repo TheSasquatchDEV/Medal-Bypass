@@ -53,21 +53,43 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1px; /* Small base size */
-  height: 1px;
+  width: 2px; /* Slightly larger base size */
+  height: 2px;
   background: transparent;
+  border-radius: 50%; /* Make particles rounded */
   box-shadow:
-    /* Particle 1 */ 0px 0px 0px 2px rgba(255, 215, 0, 0.2),
-    /* Particle 2 */ 150px 200px 0px 3px rgba(255, 215, 0, 0.15),
-    /* Particle 3 */ -100px 400px 0px 1px rgba(255, 215, 0, 0.25),
-    /* Particle 4 */ 300px -150px 0px 2px rgba(255, 215, 0, 0.1),
-    /* Particle 5 */ -250px -300px 0px 4px rgba(255, 215, 0, 0.3),
-    /* Particle 6 */ 500px 100px 0px 1px rgba(255, 215, 0, 0.2),
-    /* Particle 7 */ -400px 50px 0px 3px rgba(255, 215, 0, 0.18),
-    /* Particle 8 */ 200px -500px 0px 2px rgba(255, 215, 0, 0.22),
-    /* Particle 9 */ -50px -100px 0px 1px rgba(255, 215, 0, 0.15),
-    /* Particle 10 */ 400px 300px 0px 3px rgba(255, 215, 0, 0.28);
-  animation: float-particles 20s infinite linear; /* Adjust duration for speed */
+    /* Particle 1 */ 0px 0px 0px 3px rgba(255, 215, 0, 0.4),
+    /* Particle 2 */ 150px 200px 0px 4px rgba(255, 215, 0, 0.3),
+    /* Particle 3 */ -100px 400px 0px 2px rgba(255, 215, 0, 0.5),
+    /* Particle 4 */ 300px -150px 0px 3px rgba(255, 215, 0, 0.2),
+    /* Particle 5 */ -250px -300px 0px 5px rgba(255, 215, 0, 0.6),
+    /* Particle 6 */ 500px 100px 0px 2px rgba(255, 215, 0, 0.4),
+    /* Particle 7 */ -400px 50px 0px 4px rgba(255, 215, 0, 0.35),
+    /* Particle 8 */ 200px -500px 0px 3px rgba(255, 215, 0, 0.45),
+    /* Particle 9 */ -50px -100px 0px 2px rgba(255, 215, 0, 0.3),
+    /* Particle 10 */ 400px 300px 0px 4px rgba(255, 215, 0, 0.55),
+    /* Added more particles for density and coverage */
+    -150px 150px 0px 3px rgba(255, 215, 0, 0.4),
+    600px -200px 0px 2px rgba(255, 215, 0, 0.3),
+    -300px -50px 0px 5px rgba(255, 215, 0, 0.6),
+    100px 500px 0px 1px rgba(255, 215, 0, 0.2),
+    -500px 250px 0px 4px rgba(255, 215, 0, 0.5),
+    700px 400px 0px 3px rgba(255, 215, 0, 0.4),
+    -200px -400px 0px 2px rgba(255, 215, 0, 0.3),
+    450px -50px 0px 5px rgba(255, 215, 0, 0.6),
+    -10px 600px 0px 3px rgba(255, 215, 0, 0.4),
+    550px -100px 0px 4px rgba(255, 215, 0, 0.55),
+    -350px 350px 0px 2px rgba(255, 215, 0, 0.3),
+    250px -300px 0px 1px rgba(255, 215, 0, 0.2),
+    -500px -150px 0px 3px rgba(255, 215, 0, 0.45),
+    180px 120px 0px 4px rgba(255, 215, 0, 0.5),
+    -280px 550px 0px 2px rgba(255, 215, 0, 0.35),
+    380px -450px 0px 5px rgba(255, 215, 0, 0.6),
+    -420px -20px 0px 3px rgba(255, 215, 0, 0.4),
+    620px 280px 0px 1px rgba(255, 215, 0, 0.25),
+    -70px -600px 0px 4px rgba(255, 215, 0, 0.55),
+    50px 450px 0px 2px rgba(255, 215, 0, 0.3);
+  animation: float-particles 30s infinite linear; /* Adjust duration for speed */
   filter: blur(1px); /* Soften particles */
 }
 
@@ -76,13 +98,13 @@ body {
     transform: translate(0, 0);
   }
   25% {
-    transform: translate(10vw, 5vh);
+    transform: translate(15vw, 10vh); /* Increased movement range */
   }
   50% {
-    transform: translate(0, 10vh);
+    transform: translate(-5vw, 20vh);
   }
   75% {
-    transform: translate(-10vw, 5vh);
+    transform: translate(-20vw, 10vh);
   }
   100% {
     transform: translate(0, 0);
