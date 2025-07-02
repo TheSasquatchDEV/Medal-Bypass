@@ -1,18 +1,18 @@
 :root {
-  --background-color: #0A0A0A; /* Very dark, almost black */
-  --card-background: #1A1A1A; /* Slightly lighter than background for containers */
-  --primary-color: #FFD700; /* Gold */
-  --secondary-color: #FFFFFF; /* White for main text */
-  --text-color-light: #E0E0E0; /* Off-white for general text */
-  --border-color: #333333; /* Darker grey for borders */
-  --hover-color: #FFEA00; /* Brighter Gold for hover */
-  --link-color: #FFD700; /* Gold for subtle links */
+  --background-color: #0A0F1A; /* Deep Space Black/Dark Blue */
+  --card-background: #1A202E; /* Slightly lighter dark blue for containers */
+  --primary-color: #8BE9FD; /* Bright Light Blue/Cyan (for accents, like stars/nebulae) */
+  --secondary-color: #FFFFFF; /* Pure White for main text */
+  --text-color-light: #C0C0C0; /* Silver-grey for general text */
+  --border-color: #3A475C; /* Medium dark blue-grey for borders */
+  --hover-color: #62D2FA; /* Slightly darker primary for hover */
+  --link-color: #8BE9FD; /* Primary color for links */
   --link-hover-color: #FFFFFF; /* White on link hover */
 
-  /* Gradient colors for golden effect */
-  --gradient-start: #FFD700; /* Gold */
-  --gradient-mid: #FFC107; /* Amber */
-  --gradient-end: #FFA500; /* Orange-Gold */
+  /* Gradient colors for space-themed elements */
+  --gradient-start: #8BE9FD; /* Light blue */
+  --gradient-mid: #50B4FF; /* Medium blue */
+  --gradient-end: #3D8BFF; /* Deeper blue */
 
   /* Sharper corner radius */
   --border-radius-sharp: 8px;
@@ -47,67 +47,98 @@ body {
   overflow: hidden; /* Hide particles outside viewport */
 }
 
-/* Create multiple particles using box-shadow */
+/* Create a large number of particles using box-shadow for a dense starfield */
 .background-particles::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 2px; /* Slightly larger base size */
+  width: 2px; /* Base size for particles */
   height: 2px;
   background: transparent;
   border-radius: 50%; /* Make particles rounded */
   box-shadow:
-    /* Particle 1 */ 0px 0px 0px 3px rgba(255, 215, 0, 0.4),
-    /* Particle 2 */ 150px 200px 0px 4px rgba(255, 215, 0, 0.3),
-    /* Particle 3 */ -100px 400px 0px 2px rgba(255, 215, 0, 0.5),
-    /* Particle 4 */ 300px -150px 0px 3px rgba(255, 215, 0, 0.2),
-    /* Particle 5 */ -250px -300px 0px 5px rgba(255, 215, 0, 0.6),
-    /* Particle 6 */ 500px 100px 0px 2px rgba(255, 215, 0, 0.4),
-    /* Particle 7 */ -400px 50px 0px 4px rgba(255, 215, 0, 0.35),
-    /* Particle 8 */ 200px -500px 0px 3px rgba(255, 215, 0, 0.45),
-    /* Particle 9 */ -50px -100px 0px 2px rgba(255, 215, 0, 0.3),
-    /* Particle 10 */ 400px 300px 0px 4px rgba(255, 215, 0, 0.55),
-    /* Added more particles for density and coverage */
-    -150px 150px 0px 3px rgba(255, 215, 0, 0.4),
-    600px -200px 0px 2px rgba(255, 215, 0, 0.3),
-    -300px -50px 0px 5px rgba(255, 215, 0, 0.6),
-    100px 500px 0px 1px rgba(255, 215, 0, 0.2),
-    -500px 250px 0px 4px rgba(255, 215, 0, 0.5),
-    700px 400px 0px 3px rgba(255, 215, 0, 0.4),
-    -200px -400px 0px 2px rgba(255, 215, 0, 0.3),
-    450px -50px 0px 5px rgba(255, 215, 0, 0.6),
-    -10px 600px 0px 3px rgba(255, 215, 0, 0.4),
-    550px -100px 0px 4px rgba(255, 215, 0, 0.55),
-    -350px 350px 0px 2px rgba(255, 215, 0, 0.3),
-    250px -300px 0px 1px rgba(255, 215, 0, 0.2),
-    -500px -150px 0px 3px rgba(255, 215, 0, 0.45),
-    180px 120px 0px 4px rgba(255, 215, 0, 0.5),
-    -280px 550px 0px 2px rgba(255, 215, 0, 0.35),
-    380px -450px 0px 5px rgba(255, 215, 0, 0.6),
-    -420px -20px 0px 3px rgba(255, 215, 0, 0.4),
-    620px 280px 0px 1px rgba(255, 215, 0, 0.25),
-    -70px -600px 0px 4px rgba(255, 215, 0, 0.55),
-    50px 450px 0px 2px rgba(255, 215, 0, 0.3);
-  animation: float-particles 30s infinite linear; /* Adjust duration for speed */
-  filter: blur(1px); /* Soften particles */
+    /* A large set of randomized particles for dense coverage */
+    10px 20px 0px 2px rgba(255, 255, 255, 0.6), 150px 250px 0px 1px rgba(255, 255, 255, 0.4),
+    -80px 300px 0px 3px rgba(255, 255, 255, 0.7), 320px -100px 0px 1px rgba(255, 255, 255, 0.3),
+    -200px -250px 0px 4px rgba(255, 255, 255, 0.8), 480px 150px 0px 2px rgba(255, 255, 255, 0.5),
+    -350px 80px 0px 3px rgba(255, 255, 255, 0.65), 250px -450px 0px 2px rgba(255, 255, 255, 0.55),
+    -30px -120px 0px 1px rgba(255, 255, 255, 0.4), 420px 380px 0px 4px rgba(255, 255, 255, 0.75),
+    -180px 180px 0px 3px rgba(255, 255, 255, 0.6), 580px -180px 0px 2px rgba(255, 255, 255, 0.5),
+    -280px -80px 0px 5px rgba(255, 255, 255, 0.9), 120px 520px 0px 1px rgba(255, 255, 255, 0.35),
+    -450px 280px 0px 4px rgba(255, 255, 255, 0.7), 650px 450px 0px 3px rgba(255, 255, 255, 0.6),
+    -220px -380px 0px 2px rgba(255, 255, 255, 0.5), 400px -50px 0px 5px rgba(255, 255, 255, 0.85),
+    -50px 580px 0px 3px rgba(255, 255, 255, 0.6), 530px -120px 0px 4px rgba(255, 255, 255, 0.7),
+    -300px 320px 0px 2px rgba(255, 255, 255, 0.55), 280px -350px 0px 1px rgba(255, 255, 255, 0.4),
+    -480px -100px 0px 3px rgba(255, 255, 255, 0.65), 200px 100px 0px 4px rgba(255, 255, 255, 0.7),
+    -320px 550px 0px 2px rgba(255, 255, 255, 0.5), 380px -400px 0px 5px rgba(255, 255, 255, 0.8),
+    -400px -20px 0px 3px rgba(255, 255, 255, 0.6), 600px 300px 0px 1px rgba(255, 255, 255, 0.45),
+    -100px -580px 0px 4px rgba(255, 255, 255, 0.75), 80px 480px 0px 2px rgba(255, 255, 255, 0.55),
+    700px 10px 0px 3px rgba(255, 255, 255, 0.65), -600px 200px 0px 2px rgba(255, 255, 255, 0.5),
+    10px -700px 0px 4px rgba(255, 255, 255, 0.7), -750px 10px 0px 1px rgba(255, 255, 255, 0.3),
+    500px 600px 0px 3px rgba(255, 255, 255, 0.6), -10px -10px 0px 2px rgba(255, 255, 255, 0.5),
+    -50px 50px 0px 1px rgba(255, 255, 255, 0.4), 70px -70px 0px 3px rgba(255, 255, 255, 0.6),
+    -90px 90px 0px 2px rgba(255, 255, 255, 0.5), 110px -110px 0px 4px rgba(255, 255, 255, 0.7),
+    -130px 130px 0px 1px rgba(255, 255, 255, 0.3), 150px -150px 0px 3px rgba(255, 255, 255, 0.6),
+    -170px 170px 0px 2px rgba(255, 255, 255, 0.5), 190px -190px 0px 4px rgba(255, 255, 255, 0.7),
+    -210px 210px 0px 1px rgba(255, 255, 255, 0.3), 230px -230px 0px 3px rgba(255, 255, 255, 0.6),
+    -250px 250px 0px 2px rgba(255, 255, 255, 0.5), 270px -270px 0px 4px rgba(255, 255, 255, 0.7),
+    -290px 290px 0px 1px rgba(255, 255, 255, 0.3), 310px -310px 0px 3px rgba(255, 255, 255, 0.6),
+    -330px 330px 0px 2px rgba(255, 255, 255, 0.5), 350px -350px 0px 4px rgba(255, 255, 255, 0.7),
+    -370px 370px 0px 1px rgba(255, 255, 255, 0.3), 390px -390px 0px 3px rgba(255, 255, 255, 0.6),
+    -410px 410px 0px 2px rgba(255, 255, 255, 0.5), 430px -430px 0px 4px rgba(255, 255, 255, 0.7),
+    -450px 450px 0px 1px rgba(255, 255, 255, 0.3), 470px -470px 0px 3px rgba(255, 255, 255, 0.6),
+    -490px 490px 0px 2px rgba(255, 255, 255, 0.5), 510px -510px 0px 4px rgba(255, 255, 255, 0.7),
+    -530px 530px 0px 1px rgba(255, 255, 255, 0.3), 550px -550px 0px 3px rgba(255, 255, 255, 0.6),
+    -570px 570px 0px 2px rgba(255, 255, 255, 0.5), 590px -590px 0px 4px rgba(255, 255, 255, 0.7),
+    -610px 610px 0px 1px rgba(255, 255, 255, 0.3), 630px -630px 0px 3px rgba(255, 255, 255, 0.6),
+    -650px 650px 0px 2px rgba(255, 255, 255, 0.5), 670px -670px 0px 4px rgba(255, 255, 255, 0.7),
+    -690px 690px 0px 1px rgba(255, 255, 255, 0.3), 710px -710px 0px 3px rgba(255, 255, 255, 0.6),
+    -730px 730px 0px 2px rgba(255, 255, 255, 0.5), 750px -750px 0px 4px rgba(255, 255, 255, 0.7),
+    -770px 770px 0px 1px rgba(255, 255, 255, 0.3), 790px -790px 0px 3px rgba(255, 255, 255, 0.6),
+    -810px 810px 0px 2px rgba(255, 255, 255, 0.5), 830px -830px 0px 4px rgba(255, 255, 255, 0.7),
+    -850px 850px 0px 1px rgba(255, 255, 255, 0.3), 870px -870px 0px 3px rgba(255, 255, 255, 0.6),
+    -890px 890px 0px 2px rgba(255, 255, 255, 0.5), 910px -910px 0px 4px rgba(255, 255, 255, 0.7),
+    -930px 930px 0px 1px rgba(255, 255, 255, 0.3), 950px -950px 0px 3px rgba(255, 255, 255, 0.6),
+    -970px 970px 0px 2px rgba(255, 255, 255, 0.5), 990px -990px 0px 4px rgba(255, 255, 255, 0.7),
+    -1010px 1010px 0px 1px rgba(255, 255, 255, 0.3), 1030px -1030px 0px 3px rgba(255, 255, 255, 0.6),
+    -1050px 1050px 0px 2px rgba(255, 255, 255, 0.5), 1070px -1070px 0px 4px rgba(255, 255, 255, 0.7),
+    -1090px 1090px 0px 1px rgba(255, 255, 255, 0.3), 1110px -1110px 0px 3px rgba(255, 255, 255, 0.6),
+    -1130px 1130px 0px 2px rgba(255, 255, 255, 0.5), 1150px -1150px 0px 4px rgba(255, 255, 255, 0.7),
+    -1170px 1170px 0px 1px rgba(255, 255, 255, 0.3), 1190px -1190px 0px 3px rgba(255, 255, 255, 0.6),
+    -1210px 1210px 0px 2px rgba(255, 255, 255, 0.5), 1230px -1230px 0px 4px rgba(255, 255, 255, 0.7),
+    -1250px 1250px 0px 1px rgba(255, 255, 255, 0.3), 1270px -1270px 0px 3px rgba(255, 255, 255, 0.6),
+    -1290px 1290px 0px 2px rgba(255, 255, 255, 0.5), 1310px -1310px 0px 4px rgba(255, 255, 255, 0.7),
+    -1330px 1330px 0px 1px rgba(255, 255, 255, 0.3), 1350px -1350px 0px 3px rgba(255, 255, 255, 0.6),
+    -1370px 1370px 0px 2px rgba(255, 255, 255, 0.5), 1390px -1390px 0px 4px rgba(255, 255, 255, 0.7),
+    -1410px 1410px 0px 1px rgba(255, 255, 255, 0.3), 1430px -1430px 0px 3px rgba(255, 255, 255, 0.6),
+    -1450px 1450px 0px 2px rgba(255, 255, 255, 0.5), 1470px -1470px 0px 4px rgba(255, 255, 255, 0.7),
+    -1490px 1490px 0px 1px rgba(255, 255, 255, 0.3), 1510px -1510px 0px 3px rgba(255, 255, 255, 0.6),
+    -1530px 1530px 0px 2px rgba(255, 255, 255, 0.5), 1550px -1550px 0px 4px rgba(255, 255, 255, 0.7),
+    -1570px 1570px 0px 1px rgba(255, 255, 255, 0.3), 1590px -1590px 0px 3px rgba(255, 255, 255, 0.6),
+    -1610px 1610px 0px 2px rgba(255, 255, 255, 0.5), 1630px -1630px 0px 4px rgba(255, 255, 255, 0.7),
+    -1650px 1650px 0px 1px rgba(255, 255, 255, 0.3), 1670px -1670px 0px 3px rgba(255, 255, 255, 0.6),
+    -1690px 1690px 0px 2px rgba(255, 255, 255, 0.5), 1710px -1710px 0px 4px rgba(255, 255, 255, 0.7),
+    -1730px 1730px 0px 1px rgba(255, 255, 255, 0.3), 1750px -1750px 0px 3px rgba(255, 255, 255, 0.6),
+    -1770px 1770px 0px 2px rgba(255, 255, 255, 0.5), 1790px -1790px 0px 4px rgba(255, 255, 255, 0.7),
+    -1810px 1810px 0px 1px rgba(255, 255, 255, 0.3), 1830px -1830px 0px 3px rgba(255, 255, 255, 0.6),
+    -1850px 1850px 0px 2px rgba(255, 255, 255, 0.5), 1870px -1870px 0px 4px rgba(255, 255, 255, 0.7),
+    -1890px 1890px 0px 1px rgba(255, 255, 255, 0.3), 1910px -1910px 0px 3px rgba(255, 255, 255, 0.6),
+    -1930px 1930px 0px 2px rgba(255, 255, 255, 0.5), 1950px -1950px 0px 4px rgba(255, 255, 255, 0.7),
+    -1970px 1970px 0px 1px rgba(255, 255, 255, 0.3), 1990px -1990px 0px 3px rgba(255, 255, 255, 0.6),
+    -2010px 2010px 0px 2px rgba(255, 255, 255, 0.5), 2030px -2030px 0px 4px rgba(255, 255, 255, 0.7),
+    -2050px 2050px 0px 1px rgba(255, 255, 255, 0.3), 2070px -2070px 0px 3px rgba(255, 255, 255, 0.6);
+
+  animation: float-particles 60s infinite linear; /* Slower, continuous float */
+  filter: blur(0.8px); /* Subtle blur for a starry effect */
 }
 
 @keyframes float-particles {
   0% {
     transform: translate(0, 0);
   }
-  25% {
-    transform: translate(15vw, 10vh); /* Increased movement range */
-  }
-  50% {
-    transform: translate(-5vw, 20vh);
-  }
-  75% {
-    transform: translate(-20vw, 10vh);
-  }
   100% {
-    transform: translate(0, 0);
+    transform: translate(100vw, 100vh); /* Move across the entire screen */
   }
 }
 
@@ -141,10 +172,10 @@ body {
   margin-top: 0;
   margin-bottom: 10px; /* Space between title and description */
   font-size: 3.8rem; /* Larger heading */
-  color: var(--primary-color); /* Golden heading */
+  color: var(--primary-color); /* Light blue heading */
   letter-spacing: -1.5px; /* Tighter letter spacing */
   font-weight: 700; /* Bolder font */
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); /* More pronounced golden glow */
+  text-shadow: 0 0 10px rgba(139, 233, 253, 0.6); /* Subtle light blue glow */
 }
 
 #desc {
@@ -161,7 +192,7 @@ body {
   padding: 16px 20px; /* Increased padding */
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-sharp); /* Sharper corners */
-  background-color: #222222; /* Darker input background */
+  background-color: #222B3D; /* Darker input background */
   color: var(--secondary-color);
   font-size: 1.1em;
   outline: none;
@@ -175,13 +206,13 @@ body {
 
 .inputArea input:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.3); /* Primary color glow on focus */
+  box-shadow: 0 0 0 4px rgba(139, 233, 253, 0.3); /* Primary color glow on focus */
 }
 
 button {
   margin-top: 25px; /* Increased margin */
   padding: 15px 35px; /* Larger padding */
-  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Golden gradient */
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Space-themed gradient */
   color: var(--background-color); /* Dark text on primary button */
   border: none;
   border-radius: var(--border-radius-sharp); /* Sharper corners */
@@ -189,19 +220,19 @@ button {
   font-size: 1.25em;
   font-weight: 600; /* Semi-bold */
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4); /* Primary color shadow */
+  box-shadow: 0 6px 20px rgba(61, 139, 255, 0.4); /* Gradient-based shadow */
 }
 
 button:hover {
   background: linear-gradient(45deg, var(--hover-color), var(--gradient-mid)); /* Brighter gradient on hover */
   transform: translateY(-3px); /* Slight lift effect */
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 8px 25px rgba(61, 139, 255, 0.5);
 }
 
 button:active {
   transform: translateY(0);
   background: var(--gradient-mid); /* Solid mid-gradient color on active */
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(61, 139, 255, 0.3);
 }
 
 /* Links below button */
