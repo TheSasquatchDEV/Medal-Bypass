@@ -5,9 +5,17 @@
   --secondary-color: #FFFFFF; /* White for main text */
   --text-color-light: #E0E0E0; /* Off-white for general text */
   --border-color: #333333; /* Darker grey for borders */
-  --hover-color: #FFEB3B; /* Brighter Gold for hover */
+  --hover-color: #FFEA00; /* Brighter Gold for hover */
   --link-color: #FFD700; /* Gold for subtle links */
   --link-hover-color: #FFFFFF; /* White on link hover */
+
+  /* Gradient colors for golden effect */
+  --gradient-start: #FFD700; /* Gold */
+  --gradient-mid: #FFC107; /* Amber */
+  --gradient-end: #FFA500; /* Orange-Gold */
+
+  /* Sharper corner radius */
+  --border-radius-sharp: 8px;
 }
 
 body {
@@ -24,7 +32,63 @@ body {
   margin: 0;
   padding: 20px; /* Add some padding around the content */
   box-sizing: border-box; /* Include padding in element's total width and height */
+  position: relative; /* Needed for absolute positioning of particles */
 }
+
+/* Animated Background Particles */
+.background-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Send to background */
+  pointer-events: none; /* Allow interaction with elements below */
+  overflow: hidden; /* Hide particles outside viewport */
+}
+
+/* Create multiple particles using box-shadow */
+.background-particles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px; /* Small base size */
+  height: 1px;
+  background: transparent;
+  box-shadow:
+    /* Particle 1 */ 0px 0px 0px 2px rgba(255, 215, 0, 0.2),
+    /* Particle 2 */ 150px 200px 0px 3px rgba(255, 215, 0, 0.15),
+    /* Particle 3 */ -100px 400px 0px 1px rgba(255, 215, 0, 0.25),
+    /* Particle 4 */ 300px -150px 0px 2px rgba(255, 215, 0, 0.1),
+    /* Particle 5 */ -250px -300px 0px 4px rgba(255, 215, 0, 0.3),
+    /* Particle 6 */ 500px 100px 0px 1px rgba(255, 215, 0, 0.2),
+    /* Particle 7 */ -400px 50px 0px 3px rgba(255, 215, 0, 0.18),
+    /* Particle 8 */ 200px -500px 0px 2px rgba(255, 215, 0, 0.22),
+    /* Particle 9 */ -50px -100px 0px 1px rgba(255, 215, 0, 0.15),
+    /* Particle 10 */ 400px 300px 0px 3px rgba(255, 215, 0, 0.28);
+  animation: float-particles 20s infinite linear; /* Adjust duration for speed */
+  filter: blur(1px); /* Soften particles */
+}
+
+@keyframes float-particles {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10vw, 5vh);
+  }
+  50% {
+    transform: translate(0, 10vh);
+  }
+  75% {
+    transform: translate(-10vw, 5vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 
 .inputArea {
   display: flex;
@@ -34,7 +98,7 @@ body {
   text-align: center;
   padding: 40px; /* Increased padding */
   background-color: var(--card-background); /* Card background color */
-  border-radius: 16px; /* More rounded corners */
+  border-radius: var(--border-radius-sharp); /* Sharper corners */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
   max-width: 650px; /* Adjusted max-width */
   width: 90%; /* Responsive width */
@@ -58,7 +122,7 @@ body {
   color: var(--primary-color); /* Golden heading */
   letter-spacing: -1.5px; /* Tighter letter spacing */
   font-weight: 700; /* Bolder font */
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); /* Subtle golden glow */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); /* More pronounced golden glow */
 }
 
 #desc {
@@ -74,7 +138,7 @@ body {
   width: 100%; /* Full width within its container */
   padding: 16px 20px; /* Increased padding */
   border: 1px solid var(--border-color);
-  border-radius: 10px; /* Rounded corners */
+  border-radius: var(--border-radius-sharp); /* Sharper corners */
   background-color: #222222; /* Darker input background */
   color: var(--secondary-color);
   font-size: 1.1em;
@@ -95,25 +159,26 @@ body {
 button {
   margin-top: 25px; /* Increased margin */
   padding: 15px 35px; /* Larger padding */
-  background-color: var(--primary-color);
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Golden gradient */
   color: var(--background-color); /* Dark text on primary button */
   border: none;
-  border-radius: 10px;
+  border-radius: var(--border-radius-sharp); /* Sharper corners */
   cursor: pointer;
   font-size: 1.25em;
   font-weight: 600; /* Semi-bold */
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4); /* Primary color shadow */
 }
 
 button:hover {
-  background-color: var(--hover-color);
+  background: linear-gradient(45deg, var(--hover-color), var(--gradient-mid)); /* Brighter gradient on hover */
   transform: translateY(-3px); /* Slight lift effect */
   box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
 }
 
 button:active {
   transform: translateY(0);
+  background: var(--gradient-mid); /* Solid mid-gradient color on active */
   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
@@ -175,7 +240,7 @@ body[data-clips-shown="true"] {
   align-items: center;
   padding: 25px;
   background-color: var(--card-background);
-  border-radius: 16px;
+  border-radius: var(--border-radius-sharp); /* Sharper corners */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 25px;
   width: 100%;
@@ -200,7 +265,7 @@ body[data-clips-shown="true"] {
   height: auto;
   aspect-ratio: 16 / 9;
   margin-bottom: 15px;
-  border-radius: 10px; /* Rounded video corners */
+  border-radius: var(--border-radius-sharp); /* Sharper video corners */
   background-color: black; /* Placeholder background for video */
 }
 
@@ -256,7 +321,7 @@ body[data-clips-shown="true"] .linkIssues {
   }
   .inputArea {
     padding: 25px;
-    border-radius: 12px;
+    border-radius: var(--border-radius-sharp);
   }
 
   h1 {
@@ -270,13 +335,13 @@ body[data-clips-shown="true"] .linkIssues {
   input {
     font-size: 1em;
     padding: 14px 15px;
-    border-radius: 8px;
+    border-radius: var(--border-radius-sharp);
   }
 
   button {
     padding: 10px 20px;
     font-size: 1em;
-    border-radius: 8px;
+    border-radius: var(--border-radius-sharp);
   }
 
   .linkHelp,
@@ -287,11 +352,10 @@ body[data-clips-shown="true"] .linkIssues {
 
   .video {
     padding: 15px;
-    border-radius: 12px;
+    border-radius: var(--border-radius-sharp);
   }
 
   .video a {
     font-size: 1em;
   }
 }
-
