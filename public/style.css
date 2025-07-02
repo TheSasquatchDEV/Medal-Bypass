@@ -1,55 +1,91 @@
 :root {
-  --text-color: rgb(0, 183, 134);
+  --background-color: #1a1a1a; /* Almost black */
+  --primary-color: #ffd700; /* Yellow */
+  --secondary-color: #ffffff; /* White */
+  --text-color-light: #e0e0e0; /* Light grey for general text */
+  --border-color: #333333; /* Darker grey for borders */
+  --hover-color: #ffeb3b; /* Lighter yellow for hover */
+  --link-color: #8be9fd; /* A light blue for links, common in dark themes */
+  --link-hover-color: #62d2fa;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text-color);
-  background-color: rgb(29, 25, 25);
+  font-family: 'Inter', sans-serif; /* Modern font */
+  color: var(--text-color-light);
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  height: 95vh;
-  overflow: hidden;
+  min-height: 100vh; /* Use min-height for full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+  padding: 20px; /* Add some padding around the content */
+  box-sizing: border-box; /* Include padding in element's total width and height */
 }
+
 .inputArea {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 6vw;
-  border: 2px solid black;
-  box-shadow: 0 0 10px 3px rgb(0, 0, 0);
-  max-width: 700px;
-  min-width: fit-content;
+  padding: 40px; /* Increased padding */
+  background-color: #222222; /* Slightly lighter than background for contrast */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+  max-width: 600px; /* Adjusted max-width */
+  width: 90%; /* Responsive width */
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Smooth transitions */
 }
+
 .inputArea .header {
-  margin-bottom: 2em;
+  margin-bottom: 30px; /* Increased margin */
 }
 
 .inputArea .header::after {
   content: "";
   position: relative;
-  top: 0.5em;
+  top: 15px; /* Adjusted position */
   display: block;
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
+  width: 100px; /* Shorter line */
   height: 2px;
-  background-color: var(--text-color);
+  background-color: var(--primary-color);
+  border-radius: 2px;
 }
+
 .inputArea input {
-  max-width: 700px;
-  height: 1.5rem;
+  width: 100%; /* Full width within its container */
+  padding: 15px 20px; /* Increased padding */
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* Rounded corners */
+  background-color: #2b2b2b; /* Darker input background */
+  color: var(--secondary-color);
+  font-size: 1.1em;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
+
+.inputArea input::placeholder {
+  color: #888888;
+}
+
+.inputArea input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3); /* Yellow glow on focus */
+}
+
 body[data-clips-shown="true"] .inputArea {
   max-width: none;
-  padding: 0;
+  padding: 20px; /* Smaller padding when clips are shown */
   border: none;
   box-shadow: none;
+  background-color: transparent; /* Transparent background */
 }
 body[data-clips-shown="true"] .inputArea .header {
   margin-bottom: 0;
@@ -67,74 +103,118 @@ body[data-clips-shown="true"] {
 
 a {
   display: block;
-  padding: 0.5rem 0;
-  color: rgb(179, 179, 238);
+  padding: 10px 0;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
+
 a:hover {
-  color: rgb(120, 120, 205);
+  color: var(--link-hover-color);
+  text-decoration: underline;
 }
+
 button {
-  margin-top: 1em;
-  display: block;
-  padding: 1rem;
-  margin-bottom: 1em;
+  margin-top: 20px; /* Increased margin */
+  padding: 15px 30px; /* Larger padding */
+  background-color: var(--primary-color);
+  color: var(--background-color); /* Dark text on yellow button */
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
 }
 
 #desc {
-  font-size: 0.9em;
+  font-size: 1em; /* Slightly larger description */
   font-weight: normal;
   display: block;
-  margin-bottom: 1.4em;
+  margin-bottom: 20px; /* Adjusted margin */
+  color: var(--text-color-light);
 }
+
 h1 {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 3rem;
+  font-size: 3.5rem; /* Larger heading */
+  color: var(--secondary-color);
+  letter-spacing: -1px; /* Tighter letter spacing */
 }
+
 #videos {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  max-width: 800px; /* Wider video section */
+  margin-top: 40px; /* Space from input area */
 }
 
 .video {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 1rem;
-  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem;
+  padding: 20px;
+  background-color: #222222;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
   width: 100%;
-  max-width: 700px;
+  box-sizing: border-box;
 }
+
 .video a {
-  color: var(--text-color);
+  color: var(--primary-color);
   font-weight: 600;
-  font-size: larger;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  text-decoration: none;
 }
+
+.video a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
 .video video {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  margin-bottom: 1em;
+  margin-bottom: 15px;
+  border-radius: 8px; /* Rounded video corners */
+  background-color: black; /* Placeholder background for video */
 }
 
 .linkHelp,
 .linkIssues {
-  color: inherit;
-  /* add color transiton */
-  transition: color 0.2s;
+  color: var(--link-color);
+  transition: color 0.2s ease;
+  font-size: 0.95em;
+  margin-top: 10px;
 }
+
 .linkIssues:hover,
 .linkHelp:hover {
-  transition: color 0.2s;
-  color: rgb(0, 183, 160);
+  color: var(--link-hover-color);
 }
+
 .linkIssues {
-  display: none;
-  font-size: 1.5em;
+  display: none; /* Hidden by default */
+  font-size: 1em;
   text-decoration: none;
 }
 
@@ -143,4 +223,177 @@ body[data-clips-shown="true"] .linkHelp {
 }
 body[data-clips-shown="true"] .linkIssues {
   display: none;
+}
+
+/* Footer styles */
+.footer-left,
+.footer-right {
+  position: fixed;
+  bottom: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+  color: var(--text-color-light);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.footer-left {
+  left: 20px;
+  justify-content: flex-start;
+}
+
+.footer-right {
+  right: 20px;
+  text-align: right;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-left a,
+.footer-right a {
+  display: inline-block;
+  padding: 0;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+  color: var(--link-hover-color);
+}
+
+.footer-left span i.fa-github {
+  font-size: 2.5rem; /* Adjusted size */
+  color: var(--secondary-color); /* White GitHub icon */
+  transition: color 0.2s ease;
+}
+
+.footer-left span i.fa-github:hover {
+  color: var(--primary-color); /* Yellow on hover */
+}
+
+.footer-left i {
+  display: inline-block;
+  transform: scaleY(3.0); /* Adjusted scale */
+  position: relative;
+  top: -8px; /* Adjusted position */
+  pointer-events: none;
+  color: var(--border-color); /* Separator color */
+}
+
+.footer-left span {
+  position: relative;
+  top: -8px; /* Adjusted position for text */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-left a[aria-label="How it works"] {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  font-size: 0.9em;
+}
+
+.footer-left a[href*="youtube.com"] {
+  background-color: #ff0000; /* YouTube red */
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.7em;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.footer-left a[href*="youtube.com"]:hover {
+  background-color: #cc0000;
+}
+
+.footer-right span {
+  font-size: 0.8em;
+  color: #aaaaaa;
+  margin-bottom: 5px;
+}
+
+.footer-right a {
+  font-size: 0.9em;
+  margin-top: 2px;
+}
+
+.footer-right a[href="https://tyson3101.com"] {
+  text-decoration: overline;
+  color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .inputArea {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+  }
+
+  .footer-left,
+  .footer-right {
+    position: static; /* Make static on smaller screens */
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .footer-left {
+    gap: 5px;
+  }
+
+  .footer-left i {
+    display: none; /* Hide separator */
+  }
+
+  .footer-left span {
+    top: 0;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputArea {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  input {
+    font-size: 1em;
+    padding: 12px 15px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .linkHelp,
+  .linkIssues {
+    font-size: 0.85em;
+  }
+
+  .footer-left span i.fa-github {
+    font-size: 2rem;
+  }
 }
